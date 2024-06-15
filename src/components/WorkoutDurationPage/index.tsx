@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import { SetStateAction, useState} from 'react';
 import MainContent from "../MainContent";
-import NavBar from "../NavBar";
-import { useNavigate } from "react-router-dom";
-import { Button, Form, Modal } from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
+import {Button, Form, Modal} from "react-bootstrap";
 
 const WorkoutDurationPage = () => {
     const navigate = useNavigate();
@@ -10,11 +9,11 @@ const WorkoutDurationPage = () => {
     const [showModal, setShowModal] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
 
-    const handleDurationChange = (event) => {
+    const handleDurationChange = (event: { target: { value: SetStateAction<string>; }; }) => {
         setDuration(event.target.value);
     };
 
-    const validateDuration = (duration) => {
+    const validateDuration = (duration: string) => {
         const regex = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/;
         if (!regex.test(duration)) {
             return "Invalid timeframe or format! Please enter a valid time in HH:MM format.";

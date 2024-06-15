@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import MainContent from "../MainContent";
-import NavBar from "../NavBar";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 

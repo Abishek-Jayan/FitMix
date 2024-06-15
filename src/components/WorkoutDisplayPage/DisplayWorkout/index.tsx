@@ -1,16 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import { Row, Col, Card } from 'react-bootstrap';
-import {i} from "vite/dist/node/types.d-aGj9QkWt";
 
 const DisplayWorkout = () => {
     const [duration,setDuration] = useState(1);
-    let final_duration = sessionStorage.getItem("duration") || "01:00";
+    const final_duration = sessionStorage.getItem("duration") || "01:00";
     const selection = sessionStorage.getItem("selection");
-    let workout = localStorage.getItem("workout") || "";
-    let final_workout = JSON.parse(workout);
+    const workout = JSON.parse(localStorage.getItem("workout") || "");
     let finalArray = [];
 
-    const musclegroupWorkoutGenerator = (exercise_array, muscle_group) => {
+    const musclegroupWorkoutGenerator = (exercise_array: any[], muscle_group: string) => {
         // When given a 2D array of [rank,exercise], extract the highest ranked object, move it to the lowest rank and update all the
         // other exercises ranks
         // Then update that section in localStorage
@@ -23,16 +21,16 @@ const DisplayWorkout = () => {
         }
         highest_ranked[0] = sorted_exercises.length + 1;
         sorted_exercises.push(highest_ranked);
-        for (var i in final_workout) {
-            if (final_workout[i][muscle_group]) {
-                final_workout[i][muscle_group] = sorted_exercises;
+        for (const i in workout) {
+            if (workout[i][muscle_group]) {
+                workout[i][muscle_group] = sorted_exercises;
                 break;
             }
         }
 
 
         // Update localStorage
-        localStorage.setItem("workout", JSON.stringify(final_workout));
+        localStorage.setItem("workout", JSON.stringify(workout));
 
         // Return the updated exercise string (optional, based on your requirement)
         return highest_ranked[1];
@@ -43,10 +41,10 @@ const DisplayWorkout = () => {
     const getWorkout = () => {
         if (selection == "push")
         {
-            let chest = [];
-            let shoulders = [];
-            let triceps = [];
-            final_workout.map(item=>
+            let chest: never[] = [];
+            let shoulders: never[] = [];
+            let triceps: never[] = [];
+            workout.map((item: { chest: never[]; shoulders: never[]; triceps: never[]; })=>
             {
                 if (item.chest){
                     chest = item.chest;
@@ -67,10 +65,10 @@ const DisplayWorkout = () => {
         }
         if (selection == "pull")
         {
-            let back = [];
-            let biceps = [];
-            let forearms = [];
-            final_workout.map(item=>
+            let back: never[] = [];
+            let biceps: never[] = [];
+            let forearms: never[] = [];
+            workout.map((item: { back: never[]; biceps: never[]; forearms: never[]; })=>
             {
 
                 if (item.back){
@@ -92,10 +90,10 @@ const DisplayWorkout = () => {
         }
         if (selection == "legs")
         {
-            let quads = [];
-            let hamstrings = [];
-            let calves = [];
-            final_workout.map(item=>
+            let quads: never[] = [];
+            let hamstrings: never[] = [];
+            let calves: never[] = [];
+            workout.map((item: { quads: never[]; hamstrings: never[]; calves: never[]; })=>
             {
                 if (item.quads){
                     quads = item.quads;
@@ -115,7 +113,7 @@ const DisplayWorkout = () => {
         }
     }
 
-    function getRoundedHour(timeStr) {
+    function getRoundedHour(timeStr: string) {
         const [hourStr, minuteStr] = timeStr.split(':');
         let hour = parseInt(hourStr, 10);
         const minutes = parseInt(minuteStr, 10);
@@ -129,6 +127,8 @@ const DisplayWorkout = () => {
     const renderCards = () => {
         const cards = [];
         for (let i = 1; i <= duration; i++) {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
             finalArray = getWorkout();
             cards.push(
                 <Row key={i}>

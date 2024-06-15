@@ -1,11 +1,10 @@
-import React from "react";
 import {
     BrowserRouter as Router,
     Routes,
     Route,
     useLocation
 } from "react-router-dom";
-import {Button, Container} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import SplashPage from "./components/SplashPage/index.js";

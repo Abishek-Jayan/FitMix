@@ -1,9 +1,7 @@
-import React from 'react';
 import MainContent from "../MainContent";
-import NavBar from "../NavBar";
 import {useNavigate} from "react-router-dom";
 import data from "../../base_workout.json";
-import {Button, Container} from "react-bootstrap";
+import {Button} from "react-bootstrap";
 const SplashPage = () => {
     const navigate = useNavigate();
     const loadWorkout = () => {

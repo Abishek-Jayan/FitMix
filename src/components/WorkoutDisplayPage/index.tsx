@@ -1,4 +1,3 @@
-import React from 'react';
 import MainContent from "../MainContent";
 import DisplayWorkout from "./DisplayWorkout";
 import {Button} from "react-bootstrap";
