@@ -17,7 +17,7 @@ import "./App.css";
 const App = () => {
     return (
         <Router>
-            <Container fluid className="d-flex flex-column align-items-center text-center justify-content-center vh-100" style={{ backgroundImage: 'url(../public/background/vivid-blurred-colorful-wallpaper-background.jpg)', backgroundSize: 'cover' }}>
+            <Container fluid className="d-flex flex-column align-items-center text-center justify-content-center vh-100" style={{ backgroundImage: 'url(/background.jpg)', backgroundSize: 'cover' }}>
                 <TransitionRouter />
             </Container>
         </Router>
