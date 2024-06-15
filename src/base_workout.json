@@ -1,8 +1,140 @@
-[{"chest": ["Barbell Bench Press","Incline Bench Press","Decline Bench Press","Flat Dumbbell Press","Incline Dumbbell Press","Decline Dumbbell Press","Flat Dumbbell Fly","Cable Chest Fly","Machine Fly","Incline Dumbbell Fly","Decline Dumbbell Fly","Cheated Dips","Pinch Press","Dumbbell Pinch Press"]},
-  {"forearms":["Forearm curl front","Forearm curl back","Forearm dumbbell twist"]},
-  {"triceps": ["Tricep Cable Pushdown","Tricep Cable Curl","Tricep Dumbbell Kickbacks","Tricep Dumbbell Overhead Extensions","Tricep Cable Pullovers","Dumbbell Skull Crushers","Barbell Skull Crushers","Close Grip Bench Press"]},
-  {"shoulders":["Front Delt Raise Dumbell","Crush Grip Press Out","Dumbbell Shoulder Press","Arnold Press","Barbell Shoulder Press","Dumbell Butterfly Raise","Dumbell Hip Huggers","Cable Side Lateral Raise","Dumbbell Side Lateral Raise","Face Pulldown/ Face Pulls","Seated W Raise","Flared Elbow Straight Bar Wide Grip Pull to Chest Seated Cable Row ","Underhand Rear Delt Raise","Dumbell Swimmers","Reverse Iron Cross","Dumbell Bent Over Fly"]},
-  {"biceps":["Machine Preacher Curl","Dumbbell Preacher Curl","Barbell Preacher Curl","Dumbbell Bicep Curls","Barbell Bicep Curls","Concentration Curl","Cable Bicep Curl","Incline Bench Lying Preacher Curl","Single Arm Incline Bench Dumbell Curl","Dumbbell Hammer Curls normal","Dumbbell Hammer Curls close","Dumbbell Preacher Hammer Curls","Cable Hammer Curl","Incline Dumbell Curl","Close Grip Barbell Curls","Close Grip Chinups","Rectangle bar hammer curls"]},
-  {"back":["Hyperextensions","Supermans","Deadlift","Reverse Neutral Grip Lat Pulldown","Close Grip Pullups","Straight arm lat Pulldown","Horizontal Neutral Grip Chinups","Reverse Neutral Grip Bent over Rows","One arm Dumbell Row","Close Grip Seated Cable Row","Neutral Grip Horizontal Pullups","Dumbbell Rows Dual Arm","Mid Rows","Dumbell Tripod Row","Wide Grip Lat Pulldown","Wide T-bar Rows","Dumbell Pullovers","Wide Grip Bent over Barbell Rows","Single arm bent over Dumbell Row","Wide Reverse Grip Lat Pulldown"]},
-  {"legs":["Dual Leg extensions","Single Leg extensions","Barbell normal squat","Dumbbell normal squat","Leg press","Barbell Sumo squat","Dumbell Sumo squat","Dumbbell Goblet squat","Dumbbell Walking lunges","Barbell Walking lunges","Standing lunges","Pistol squats","Weighted Bulgarian Split Squats","Single leg tyre box jumps","Tyre flip","Broad Jumps","Knee Jumps","Hamstring curl","Hamstring standing curl","RDL","Smith Machine Calf Raise","Standing calf raise machine outer and inner","Single leg standing calf raise"]}
+[
+  {
+    "chest": [
+      [1, "Barbell Bench Press"],
+      [2, "Incline Bench Press"],
+      [3, "Decline Bench Press"],
+      [4, "Flat Dumbbell Press"],
+      [5, "Incline Dumbbell Press"],
+      [6, "Decline Dumbbell Press"],
+      [7, "Flat Dumbbell Fly"],
+      [8, "Cable Chest Fly"],
+      [9, "Machine Fly"],
+      [10, "Incline Dumbbell Fly"],
+      [11, "Decline Dumbbell Fly"],
+      [12, "Cheated Dips"],
+      [13, "Pinch Press"],
+      [14, "Dumbbell Pinch Press"]
+    ]
+  },
+  {
+    "forearms": [
+      [1, "Forearm curl front"],
+      [2, "Forearm curl back"],
+      [3, "Forearm dumbbell twist"]
+    ]
+  },
+  {
+    "triceps": [
+      [1, "Tricep Cable Pushdown"],
+      [2, "Tricep Cable Curl"],
+      [3, "Tricep Dumbbell Kickbacks"],
+      [4, "Tricep Dumbbell Overhead Extensions"],
+      [5, "Tricep Cable Pullovers"],
+      [6, "Dumbbell Skull Crushers"],
+      [7, "Barbell Skull Crushers"],
+      [8, "Close Grip Bench Press"]
+    ]
+  },
+  {
+    "shoulders": [
+      [1, "Front Delt Raise Dumbell"],
+      [2, "Crush Grip Press Out"],
+      [3, "Dumbbell Shoulder Press"],
+      [4, "Arnold Press"],
+      [5, "Barbell Shoulder Press"],
+      [6, "Dumbell Butterfly Raise"],
+      [7, "Dumbell Hip Huggers"],
+      [8, "Cable Side Lateral Raise"],
+      [9, "Dumbbell Side Lateral Raise"],
+      [10, "Face Pulldown/ Face Pulls"],
+      [11, "Seated W Raise"],
+      [12, "Wide Grip Seated Cable Row"],
+      [13, "Underhand Rear Delt Raise"],
+      [14, "Dumbell Swimmers"],
+      [15, "Reverse Iron Cross"],
+      [16, "Dumbell Bent Over Fly"]
+    ]
+  },
+  {
+    "biceps": [
+      [1, "Machine Preacher Curl"],
+      [2, "Dumbbell Preacher Curl"],
+      [3, "Barbell Preacher Curl"],
+      [4, "Dumbbell Bicep Curls"],
+      [5, "Barbell Bicep Curls"],
+      [6, "Concentration Curl"],
+      [7, "Cable Bicep Curl"],
+      [8, "Incline Bench Lying Preacher Curl"],
+      [9, "Single Arm Incline Bench Dumbell Curl"],
+      [10, "Dumbbell Hammer Curls normal"],
+      [11, "Dumbbell Hammer Curls close"],
+      [12, "Dumbbell Preacher Hammer Curls"],
+      [13, "Cable Hammer Curl"],
+      [14, "Incline Dumbell Curl"],
+      [15, "Close Grip Barbell Curls"],
+      [16, "Close Grip Chinups"],
+      [17, "Rectangle bar hammer curls"]
+    ]
+  },
+  {
+    "back": [
+      [1, "Hyperextensions"],
+      [2, "Supermans"],
+      [3, "Deadlift"],
+      [4, "Reverse Neutral Grip Lat Pulldown"],
+      [5, "Close Grip Pullups"],
+      [6, "Straight arm lat Pulldown"],
+      [7, "Horizontal Neutral Grip Chinups"],
+      [8, "Reverse Neutral Grip Bent over Rows"],
+      [9, "One arm Dumbell Row"],
+      [10, "Close Grip Seated Cable Row"],
+      [11, "Neutral Grip Horizontal Pullups"],
+      [12, "Dumbbell Rows Dual Arm"],
+      [13, "Mid Rows"],
+      [14, "Dumbell Tripod Row"],
+      [15, "Wide Grip Lat Pulldown"],
+      [16, "Wide T-bar Rows"],
+      [17, "Dumbell Pullovers"],
+      [18, "Wide Grip Bent over Barbell Rows"],
+      [19, "Single arm bent over Dumbell Row"],
+      [20, "Wide Reverse Grip Lat Pulldown"]
+    ]
+  },
+  {
+    "quads": [
+      [1, "Dual Leg extensions"],
+      [2, "Single Leg extensions"],
+      [3, "Barbell normal squat"],
+      [4, "Dumbbell normal squat"],
+      [5, "Leg press"],
+      [6, "Barbell Sumo squat"],
+      [7, "Dumbell Sumo squat"],
+      [8, "Dumbbell Goblet squat"],
+      [9, "Dumbbell Walking lunges"],
+      [10, "Barbell Walking lunges"],
+      [11, "Standing lunges"],
+      [12, "Pistol squats"],
+      [13, "Weighted Bulgarian Split Squats"],
+      [14, "Single leg tyre box jumps"],
+      [15, "Tyre flip"],
+      [16, "Broad Jumps"],
+      [17, "Knee Jumps"]
+    ]
+  },
+  {
+    "hamstrings": [
+      [1, "Hamstring curl"],
+      [2, "Hamstring standing curl"],
+      [3, "Romanian Dead Lift"],
+      [4, "Smith Machine Calf Raise"]
+    ]
+  },
+  {
+    "calves": [
+      [1, "Smith Machine Calf Raise"],
+      [2, "Standing calf raise machine outer and inner"],
+      [3, "Single leg standing calf raise"]
+    ]
+  }
 ]

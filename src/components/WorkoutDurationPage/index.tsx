@@ -29,6 +29,7 @@ const WorkoutDurationPage = () => {
             setShowModal(true);
         } else {
             setShowModal(false);
+            sessionStorage.setItem("duration",duration);
             navigate("/workoutdisplay", { state: { duration } });
         }
     };
