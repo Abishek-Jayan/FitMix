@@ -8,11 +8,8 @@ const DisplayWorkout = () => {
     const workout = JSON.parse(localStorage.getItem("workout") || "");
     let finalArray = [];
 
-    const musclegroupWorkoutGenerator = (exercise_array: any[], muscle_group: string) => {
-        // When given a 2D array of [rank,exercise], extract the highest ranked object, move it to the lowest rank and update all the
-        // other exercises ranks
-        // Then update that section in localStorage
-        // Then return the exercise string
+    const musclegroupExercisePicker = (exercise_array: any[], muscle_group: string) => {
+
         const sorted_exercises = exercise_array.sort((a, b) => a[0] - b[0]);
         const highest_ranked = sorted_exercises.shift();
 
@@ -33,82 +30,80 @@ const DisplayWorkout = () => {
 
         return highest_ranked[1];
 
-
-
     }
     const getWorkout = () => {
+        let muscle1: never[] = [];
+        let muscleString1 = "";
+        let muscle2: never[] = [];
+        let muscleString2 = "";
+        let muscle3: never[] = [];
+        let muscleString3 = "";
         if (selection == "push")
         {
-            let chest: never[] = [];
-            let shoulders: never[] = [];
-            let triceps: never[] = [];
+
             workout.map((item: { chest: never[]; shoulders: never[]; triceps: never[]; })=>
             {
                 if (item.chest){
-                    chest = item.chest;
+                    muscle1 = item.chest;
+                    muscleString1 = "chest";
                 }
                 if (item.shoulders){
-                    shoulders = item.shoulders;
+                    muscle2 = item.shoulders;
+                    muscleString2 = "shoulders";
                 }
                 if (item.triceps){
-                    triceps = item.triceps;
+                    muscle3 = item.triceps;
+                    muscleString3 = "triceps";
                 }
             })
-            const chestRandom = musclegroupWorkoutGenerator(chest,"chest")
-            const shoulderRandom = musclegroupWorkoutGenerator(shoulders,"shoulders");
 
-            const tricepRandom = musclegroupWorkoutGenerator(triceps,"triceps")
 
-            return [chestRandom,shoulderRandom,tricepRandom];
         }
         if (selection == "pull")
         {
-            let back: never[] = [];
-            let biceps: never[] = [];
-            let forearms: never[] = [];
             workout.map((item: { back: never[]; biceps: never[]; forearms: never[]; })=>
             {
 
                 if (item.back){
-                    back = item.back;
+                    muscle1 = item.back;
+                    muscleString1 = "back";
+
                 }
                 if (item.biceps){
-                    biceps = item.biceps;
+                    muscle2 = item.biceps;
+                    muscleString2 = "biceps";
                 }
                 if (item.forearms){
-                    forearms = item.forearms;
+                    muscle3 = item.forearms;
+                    muscleString3 = "forearms";
                 }
             })
-            const backRandom = musclegroupWorkoutGenerator(back,"back")
-            const bicepsRandom = musclegroupWorkoutGenerator(biceps,"biceps")
-
-            const forearmsRandom = musclegroupWorkoutGenerator(forearms,"forearms")
-
-            return [backRandom,bicepsRandom,forearmsRandom];
         }
         if (selection == "legs")
         {
-            let quads: never[] = [];
-            let hamstrings: never[] = [];
-            let calves: never[] = [];
+
             workout.map((item: { quads: never[]; hamstrings: never[]; calves: never[]; })=>
             {
                 if (item.quads){
-                    quads = item.quads;
+                    muscle1 = item.quads;
+                    muscleString1 = "quads";
                 }
                 if (item.hamstrings){
-                    hamstrings = item.hamstrings;
+                    muscle2= item.hamstrings;
+                    muscleString2 = "hamstrings";
                 }
                 if (item.calves){
-                    calves = item.calves;
+                    muscle3 = item.calves;
+                    muscleString3 = "calves";
                 }
             })
-            const quadsRandom =  musclegroupWorkoutGenerator(quads,"quads")
-            const hamstringsRandom =  musclegroupWorkoutGenerator(hamstrings,"hamstrings")
-            const calvesRandom =  musclegroupWorkoutGenerator(calves,"calves")
-
-            return [quadsRandom,hamstringsRandom,calvesRandom];
         }
+        const muscleRandom1 = musclegroupExercisePicker(muscle1,muscleString1);
+        const muscleRandom2 = musclegroupExercisePicker(muscle2,muscleString2);
+        const muscleRandom3 = musclegroupExercisePicker(muscle3,muscleString3);
+        
+        return [muscleRandom1,muscleRandom2,muscleRandom3];
+
     }
 
     function getRoundedHour(timeStr: string) {
@@ -125,8 +120,6 @@ const DisplayWorkout = () => {
     const renderCards = () => {
         const cards = [];
         for (let i = 1; i <= duration; i++) {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-expect-error
             finalArray = getWorkout();
             cards.push(
                 <Row key={i}>
@@ -159,7 +152,7 @@ const DisplayWorkout = () => {
         return cards;
     };
     useEffect(()=>{        setDuration(getRoundedHour(final_duration));
-    },[]);
+    },[final_duration]);
     return (
        <>
            <div style={{height: 100}}>
