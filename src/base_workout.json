@@ -126,14 +126,13 @@
     "hamstrings": [
       [1, "Hamstring curl"],
       [2, "Hamstring standing curl"],
-      [3, "Romanian Dead Lift"],
-      [4, "Smith Machine Calf Raise"]
+      [3, "Romanian Dead Lift"]
     ]
   },
   {
     "calves": [
       [1, "Smith Machine Calf Raise"],
-      [2, "Standing calf raise machine outer and inner"],
+      [2, "Standing calf raise machine"],
       [3, "Single leg standing calf raise"]
     ]
   }

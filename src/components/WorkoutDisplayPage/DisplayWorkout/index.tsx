@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import { Row, Col, Card } from 'react-bootstrap';
+import {Row, Col, Card, Collapse} from 'react-bootstrap';
 
 const DisplayWorkout = () => {
     const [duration,setDuration] = useState(1);
@@ -29,10 +29,8 @@ const DisplayWorkout = () => {
         }
 
 
-        // Update localStorage
         localStorage.setItem("workout", JSON.stringify(workout));
 
-        // Return the updated exercise string (optional, based on your requirement)
         return highest_ranked[1];
 
 
@@ -132,17 +130,28 @@ const DisplayWorkout = () => {
             finalArray = getWorkout();
             cards.push(
                 <Row key={i}>
-                    <Col>
+                    <Col >
                         <Card className="mb-4" style={{ width: '25rem' }}>
                             <Card.Header as="h5" style={{ backgroundColor: "#FFA629" }}>Hour {i}</Card.Header>
-                            <Card.Body style={{ backgroundColor: "#FFA629" }}>
-                                {finalArray.map((item, index) => (
-                                    <Card.Text key={index} className="mb-3" style={{ backgroundColor: "#E7DF11" }}>
-                                        {item} 3x12
-                                    </Card.Text>
-                                ))}
+                            <Collapse in={true} appear={true} dimension="width">
+                                <div>
+
+                                    <Card.Body style={{backgroundColor: "#FFA629", width: '24.9rem'}}>
+
+                                        {finalArray.map((item, index) => (
+                                            <Card.Text key={index} className="mb-3"
+                                                       style={{backgroundColor: "#E7DF11"}}>
+                                                {item} 3 sets x 12 reps
+                                            </Card.Text>
+                                        ))}
+
+
                             </Card.Body>
-                        </Card>
+                                </div>
+
+                            </Collapse>
+
+                    </Card>
                     </Col>
                 </Row>
             );
@@ -153,7 +162,10 @@ const DisplayWorkout = () => {
     },[]);
     return (
        <>
-           {renderCards()}
+           <div style={{height: 100}}>
+               {renderCards()}
+
+           </div>
         </>
     );
 };

@@ -3,7 +3,6 @@
 // @ts-expect-error
 const MainContent = ({content}) => {
     return (<>
-
             <h1>{content}</h1>
         </>
     );

@@ -1,3 +1,13 @@
 html body {
             font-family: "Arimo" , sans-serif ;
-        }
+            background: linear-gradient(to right, rgb(255, 221, 150), rgb(255, 170, 71), rgb(255, 66, 36));
+
+}
+
+:root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+

@@ -1,13 +1,13 @@
 import { SetStateAction, useState} from 'react';
 import MainContent from "../MainContent";
-import {useNavigate} from "react-router-dom";
 import {Button, Form, Modal} from "react-bootstrap";
+import CustomFade from "../CustomFade";
 
 const WorkoutDurationPage = () => {
-    const navigate = useNavigate();
     const [duration, setDuration] = useState("");
     const [showModal, setShowModal] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
+    const [open,setOpen] = useState(true);
 
     const handleDurationChange = (event: { target: { value: SetStateAction<string>; }; }) => {
         setDuration(event.target.value);
@@ -28,15 +28,15 @@ const WorkoutDurationPage = () => {
             setShowModal(true);
         } else {
             setShowModal(false);
+            setOpen(prevState => !prevState);
             sessionStorage.setItem("duration",duration);
-            navigate("/workoutdisplay", { state: { duration } });
         }
     };
 
     return (
         <>
-            {/* Uncomment NavBar if needed */}
-            {/* <NavBar/> */}
+            <CustomFade open={open} goto="/workoutdisplay">
+            <div>
             <MainContent content="Enter Workout Duration" />
             <Form className="mt-3 d-flex flex-column align-items-center">
                 <Form.Group controlId="durationInput">
@@ -51,8 +51,9 @@ const WorkoutDurationPage = () => {
                 </Form.Group>
                 <Button onClick={saveSelection} style={{ backgroundColor: '#FFA629' }} className="mt-3">Continue</Button>
             </Form>
+            </div>
+            </CustomFade>
 
-            {/* Modal for displaying error messages */}
             <Modal show={showModal} onHide={() => setShowModal(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Error</Modal.Title>
